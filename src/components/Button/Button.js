@@ -1,13 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider, withTheme } from 'emotion-theming'
-
+import { theme as themeDefault } from '../../utils/Theme'
 import ButtonStyled from './button.styles.js'
 
 function Button({ children, onClick, theme }) {
+  const adjustedTheme = (ancestorTheme) => ({ ...ancestorTheme, ...theme })
   return (
-    <ThemeProvider theme={theme}>
-      <ButtonStyled onClick={onClick}>{children}</ButtonStyled>
+    <ThemeProvider theme={themeDefault}>
+      <ThemeProvider theme={adjustedTheme}>
+        <ButtonStyled onClick={onClick}>{children}</ButtonStyled>
+      </ThemeProvider>
     </ThemeProvider>
   )
 }
@@ -28,5 +31,6 @@ Button.defaultProps = {
   margin: '0',
   onClick: (event) => {
     console.log('Click', event.target)
-  }
+  },
+  theme: themeDefault
 }

@@ -1,12 +1,20 @@
 import React from 'react'
 
-import { Button } from 'my-component-lib'
+import { Button, ThemeProvider } from 'my-component-lib'
+
+const theme = {
+  color: 'blue',
+  backgroundColor: 'magenta',
+  primaryColor: 'cyan'
+}
 
 const App = () => {
   return (
-    <div>
-      <Button onClick={() => alert('clicou')}>Teste</Button>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Button onClick={() => alert('clicou')}>Teste</Button>
+      </div>
+      </ThemeProvider>
   )
 }
 
