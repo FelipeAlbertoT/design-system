@@ -1,6 +1,6 @@
 {
-  "name": "my-component-lib",
-  "version": "1.0.0",
+  "name": "my-component-lib-treichel",
+  "version": "1.0.2",
   "description": "Teste de criação de biblioteca de componentes",
   "author": "Felipe Alberto Treichel",
   "license": "MIT",
@@ -49,5 +49,10 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion": "^10.0.27"
+  }
 }
